@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>update page</title>
+</head>
+<style>
+    div{text-align: center;}
+</style>
+<body>
+    <div>
+    <h1>수정하기</h1>
+    <form action="{% url 'update' id %}" method="POST">
+        {%csrf_token%}
+        <p>기업명: <input type="text" name = "name" value="{{name}}"></p>
+        <p>장소: <input type="text" name = "location" value="{{location}}"></p>
+        <p>상세정보: <textarea name="detail_info" cols="30" rows="10">{{detail_info}}</textarea></p>
+        <p>시급: <input type="integer" name = "pay" value="{{pay}}"></p>
+        <p>업무: <textarea name="work" cols="30" rows="10">{{work}}</textarea></p>
+        <button type="submit">작성</button>
+    </form>
+    </div>
+</body>
+</html>

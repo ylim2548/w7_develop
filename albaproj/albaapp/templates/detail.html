@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>detail page</title>
+</head>
+<style>
+        div{text-align: center}
+</style>
+<body>
+    <div>
+    <p>기업명: {{name}}</p>
+    <p>장소: {{location}}</p>
+    <p>상세정보: {{detail_info}}</p>
+    <p>시급: {{pay}}</p>
+    <p>하는 일:{{work}}</p>
+    <p>지원자 수: {{applicant}}</p>
+    <a href="{% url 'update_page' id %}">수정</a>
+    <a href="{% url 'delete' id %}">삭제</a>
+    <br><br>
+    <a href="{% url 'plus' id %}">지원하기</a>
+    <a href="{% url 'minus' id %}">지원 취소하기</a>
+    </div>
+</body>
+</html>
